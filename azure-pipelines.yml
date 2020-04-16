@@ -1,0 +1,50 @@
+variables:
+  buildConfiguration: 'Release'
+  isRemote: true
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: SonarCloudPrepare@1
+  displayName: 'Prepare SonarCloud analysis'
+  inputs:
+    SonarCloud: 'SonarCloud'
+    organization: 'aqualityautomation'
+    projectKey: 'aquality-automation_aquality-winappdriver-dotnet'
+    projectName: 'aquality-winappdriver-dotnet'
+    projectVersion: '$(Build.BuildNumber)'
+    extraProperties: |
+      sonar.coverage.exclusions=**/**
+
+- script: dotnet build Aquality.WinAppDriver.Template/Aquality.WinAppDriver.Template.sln -c $(buildConfiguration)
+  displayName: 'Build solution - $(buildConfiguration)'
+
+- task: SonarCloudAnalyze@1
+  displayName: 'Run SonarCloud code analysis'
+  continueOnError: true
+
+- task: SonarCloudPublish@1
+  displayName: 'Publish SonarCloud quality gate results'
+  continueOnError: true
+
+- task: Windows Application Driver@0
+  displayName: 'Start WinAppDriver'
+  inputs:
+    OperationType: 'Start'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Run tests'
+  inputs:
+    command: 'test'
+    projects: '**/Aquality.WinAppDriver.Template.SpecFlow.csproj'
+    arguments: -c $(buildConfiguration) --no-build
+    publishTestResults: true
+
+- task: Windows Application Driver@0
+  displayName: stop WinAppDriver
+  inputs:
+    OperationType: 'Stop'
