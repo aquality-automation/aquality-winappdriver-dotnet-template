@@ -1,0 +1,10 @@
+{
+  "stepAssemblies": [
+    { "assembly": "Aquality.WinAppDriver.Template.SpecFlow" },
+    { "assembly": "Allure.SpecFlowPlugin" }
+  ],
+  "runtime": {
+    "stopAtFirstError": true,
+    "missingOrPendingStepsOutcome": "Error"
+  }
+}
