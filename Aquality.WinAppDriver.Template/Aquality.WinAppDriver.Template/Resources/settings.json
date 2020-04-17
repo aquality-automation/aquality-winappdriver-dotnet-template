@@ -1,4 +1,5 @@
 ﻿{
+  "environment": "Stage",
   "isRemote": true,
   "remoteConnectionUrl": "http://127.0.0.1:4723/",
   "driverSettings": {
@@ -21,7 +22,7 @@
     "pollingInterval": 300
   },
   "logger": {
-    "language": "be"
+    "language": "en"
   },
   "elementCache": {
     "isEnabled": true

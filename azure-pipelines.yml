@@ -14,8 +14,8 @@ steps:
   inputs:
     SonarCloud: 'SonarCloud'
     organization: 'aqualityautomation'
-    projectKey: 'aquality-automation_aquality-winappdriver-dotnet'
-    projectName: 'aquality-winappdriver-dotnet'
+    projectKey: 'aquality-automation_aquality-winappdriver-dotnet-template'
+    projectName: 'aquality-winappdriver-dotnet-template'
     projectVersion: '$(Build.BuildNumber)'
     extraProperties: |
       sonar.coverage.exclusions=**/**
