@@ -23,7 +23,7 @@ namespace Aquality.WinAppDriver.Template.SpecFlow.StepDefinitions
         [Then(@"About the Author window is opened")]
         public void AboutTheAuthorWindowIsOpened()
         {
-            Assert.IsTrue(aboutTheAuthorWindow.State.WaitForDisplayed(), "About the Author window is closed");
+            Assert.IsTrue(aboutTheAuthorWindow.State.IsDisplayed, "About the Author window is closed");
         }
 
         [Then(@"About the Author window is closed")]

@@ -22,7 +22,7 @@ namespace Aquality.WinAppDriver.Template.Forms
 
         public int Result => int.Parse(ResultsLabel.Text);
 
-        public void ClickAboutTheAuthorButton() => AboutTheAuthorButton.Click();
+        public void ClickAboutTheAuthorButton() => AboutTheAuthorButton.MouseActions.Click();
 
         public void ClickOperation(Operation operation)
         {
