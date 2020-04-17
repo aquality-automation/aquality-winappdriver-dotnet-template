@@ -9,9 +9,9 @@ namespace Aquality.WinAppDriver.Template.SpecFlow.StepDefinitions
     {
         private readonly CalculatorForm calculatorForm;
 
-        public CalculatorWindowSteps()
+        public CalculatorWindowSteps(CalculatorForm calculatorForm)
         {
-            calculatorForm = new CalculatorForm();
+            this.calculatorForm = calculatorForm;
         }
 
         [When(@"I click About the Author button")]
@@ -20,19 +20,19 @@ namespace Aquality.WinAppDriver.Template.SpecFlow.StepDefinitions
             calculatorForm.ClickAboutTheAuthorButton();
         }
 
-        [When(@"I click (.*) on the numpad")]
+        [When(@"I click '(.*)' on the numpad")]
         public void IClickNumberOnTheNumpad(int number)
         {
             calculatorForm.ClickNumberOnTheNumpad(number);
         }
 
-        [When(@"I click (.*) operation")]
+        [When(@"I click '(.*)' operation")]
         public void IClickOperation(CalculatorForm.Operation operation)
         {
             calculatorForm.ClickOperation(operation);
         }
 
-        [Then(@"the result should be (.*)")]
+        [Then(@"the result should be '(.*)'")]
         public void TheResultShouldBe(int expectedResult)
         {
             Assert.AreEqual(expectedResult, calculatorForm.CalculationResult, "Calculated result is correct");

@@ -10,7 +10,7 @@ namespace Aquality.WinAppDriver.Template.Forms
 
         public AboutTheAuthorWindow() : base(By.Name("About the Author"), "About the Author")
         {
-            CloseButton = ElementFactory.FindChildElement<IButton>(this, By.Name("CLOSE"), "Close");
+            CloseButton = FindChildElement<IButton>(By.Name("CLOSE"), "Close");
         }
 
         public void Close()

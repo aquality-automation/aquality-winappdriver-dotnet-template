@@ -1,6 +1,7 @@
 ﻿using Aquality.WinAppDriver.Elements.Interfaces;
 using Aquality.WinAppDriver.Forms;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Appium;
 using System.Collections.Generic;
 
 namespace Aquality.WinAppDriver.Template.Forms
@@ -13,11 +14,11 @@ namespace Aquality.WinAppDriver.Template.Forms
             { Operation.Equals, "=" }
         };
 
-        private ILabel ResultsLabel => ElementFactory.GetLabel(By.XPath("//*[@AutomationId='48']"), "Results bar");
+        private ILabel ResultsLabel => ElementFactory.GetLabel(MobileBy.AccessibilityId("48"), "Results bar");
         
-        private IButton AboutTheAuthorButton => ElementFactory.GetButton(By.XPath("//*[@AutomationId='30']"), "About the Author");
+        private IButton AboutTheAuthorButton => ElementFactory.GetButton(MobileBy.AccessibilityId("30"), "About the Author");
 
-        public CalculatorForm() : base(By.Name("Day Maxi Calc  v.1.5 Freeware"), "Calculator")
+        public CalculatorForm() : base(By.Name($"{Configuration.Configuration.ProcessName}  {Configuration.Configuration.Version}"), "Calculator")
         {
         }
 

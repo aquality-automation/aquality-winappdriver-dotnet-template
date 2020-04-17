@@ -2,11 +2,11 @@
 
 @demo
 Scenario: Add two numbers
-	When I click 7 on the numpad
-	And I click Add operation
-	And I click 8 on the numpad
-	And I click Equals operation
-	Then the result should be 15
+	When I click '7' on the numpad
+	And I click 'Add' operation
+	And I click '8' on the numpad
+	And I click 'Equals' operation
+	Then the result should be '15'
 
 @demo
 Scenario: About the Author info is availabe

@@ -9,9 +9,9 @@ namespace Aquality.WinAppDriver.Template.SpecFlow.StepDefinitions
     {
         private readonly AboutTheAuthorWindow aboutTheAuthorWindow;
 
-        public AboutTheAuthorWindowSteps()
+        public AboutTheAuthorWindowSteps(AboutTheAuthorWindow aboutTheAuthorWindow)
         {
-            aboutTheAuthorWindow = new AboutTheAuthorWindow();
+            this.aboutTheAuthorWindow = aboutTheAuthorWindow;
         }
 
         [When(@"I click CLOSE About the Author window button")]
