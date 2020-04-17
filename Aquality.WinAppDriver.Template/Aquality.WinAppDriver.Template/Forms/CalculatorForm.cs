@@ -7,14 +7,15 @@ namespace Aquality.WinAppDriver.Template.Forms
 {
     public class CalculatorForm : Form
     {
-        private readonly IButton AboutTheAuthorButton;// => ElementFactory.GetButton(By.XPath("//*[@AutomationId='30']"), "About the Author");
-        private ILabel ResultsLabel => ElementFactory.GetLabel(By.XPath("//*[@AutomationId='48']"), "Results bar");
-
-        private static readonly IDictionary<Operation, string> OperationsLocators = new Dictionary<Operation, string> 
+        private static readonly IDictionary<Operation, string> OperationsLocators = new Dictionary<Operation, string>
         {
             { Operation.Add, "+" },
             { Operation.Equals, "=" }
         };
+
+        private ILabel ResultsLabel => ElementFactory.GetLabel(By.XPath("//*[@AutomationId='48']"), "Results bar");
+        
+        private readonly IButton AboutTheAuthorButton;
 
         public CalculatorForm() : base(By.Name("Day Maxi Calc  v.1.5 Freeware"), "Calculator")
         {
@@ -26,7 +27,7 @@ namespace Aquality.WinAppDriver.Template.Forms
         public void ClickAboutTheAuthorButton()
         {
             AboutTheAuthorButton.State.WaitForClickable();
-            AboutTheAuthorButton.MouseActions.DoubleClick();
+            AboutTheAuthorButton.Click();
         }
 
         public void ClickOperation(Operation operation)
