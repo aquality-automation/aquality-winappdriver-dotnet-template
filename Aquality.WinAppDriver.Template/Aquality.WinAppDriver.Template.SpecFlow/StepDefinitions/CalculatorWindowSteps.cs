@@ -35,7 +35,7 @@ namespace Aquality.WinAppDriver.Template.SpecFlow.StepDefinitions
         [Then(@"the result should be (.*)")]
         public void TheResultShouldBe(int expectedResult)
         {
-            Assert.AreEqual(expectedResult, calculatorForm.Result, "Calculated result is correct");
+            Assert.AreEqual(expectedResult, calculatorForm.CalculationResult, "Calculated result is correct");
         }
     }
 }
