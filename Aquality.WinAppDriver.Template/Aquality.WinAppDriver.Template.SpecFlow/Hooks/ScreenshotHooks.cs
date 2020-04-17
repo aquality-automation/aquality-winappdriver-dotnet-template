@@ -1,6 +1,7 @@
 ﻿using Allure.Commons;
 using Aquality.WinAppDriver.Applications;
 using Aquality.WinAppDriver.Template.Utilities;
+using NUnit.Framework;
 using TechTalk.SpecFlow;
 
 namespace Aquality.WinAppDriver.Template.SpecFlow.Hooks
@@ -24,6 +25,7 @@ namespace Aquality.WinAppDriver.Template.SpecFlow.Hooks
                 && AqualityServices.IsApplicationStarted)
             {
                 var pathToScreenshot = screenshotProvider.TakeScreenshot();
+                TestContext.AddTestAttachment(pathToScreenshot);
                 AllureLifecycle.Instance.AddAttachment(pathToScreenshot, "Screenshot");
             }
         }

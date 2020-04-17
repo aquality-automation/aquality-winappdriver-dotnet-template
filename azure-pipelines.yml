@@ -49,6 +49,7 @@ steps:
     projects: '**/Aquality.WinAppDriver.Template.SpecFlow.csproj'
     arguments: -c $(buildConfiguration) --no-build
     publishTestResults: true
+  continueOnError: true
 
 - task: Windows Application Driver@0
   displayName: stop WinAppDriver
