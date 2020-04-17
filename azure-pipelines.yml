@@ -20,8 +20,14 @@ steps:
     extraProperties: |
       sonar.coverage.exclusions=**/**
 
-- script: dotnet build Aquality.WinAppDriver.Template/Aquality.WinAppDriver.Template.sln -c $(buildConfiguration)
-  displayName: 'Build solution - $(buildConfiguration)'
+- task: DotNetCoreCLI@2
+  displayName: 'Build whole solution'
+  env: 
+    MSBUILDSINGLELOADCONTEXT: 1  # https://github.com/SpecFlowOSS/SpecFlow/issues/1912
+  inputs:
+    command: 'build'
+    projects: Aquality.WinAppDriver.Template/Aquality.WinAppDriver.Template.sln
+    arguments: -c $(buildConfiguration)
 
 - task: SonarCloudAnalyze@1
   displayName: 'Run SonarCloud code analysis'
