@@ -6,6 +6,16 @@ namespace Aquality.WinAppDriver.Template.SpecFlow.Hooks
     [Binding]
     public class ApplicationHooks
     {
+        [BeforeScenario]
+        public void StartApplication()
+        {
+            if (!AqualityServices.IsApplicationStarted)
+            {
+                AqualityServices.Application.Launch();
+            }
+        }
+
+
         [AfterScenario(Order = 1)]
         public void CloseApplication()
         {
