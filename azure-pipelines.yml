@@ -21,7 +21,7 @@ steps:
       sonar.coverage.exclusions=**/**
 
 - task: DotNetCoreCLI@2
-  displayName: 'Build whole solution'
+  displayName: 'Build solution'
   env: 
     MSBUILDSINGLELOADCONTEXT: 1  # https://github.com/SpecFlowOSS/SpecFlow/issues/1912
   inputs:

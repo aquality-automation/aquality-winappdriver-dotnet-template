@@ -25,7 +25,7 @@ namespace Aquality.WinAppDriver.Template.Forms
         public void ClickAboutTheAuthorButton()
         {
             AboutTheAuthorButton.State.WaitForClickable();
-            AboutTheAuthorButton.Click();
+            AboutTheAuthorButton.MouseActions.Click();
         }
 
         public void ClickOperation(Operation operation)

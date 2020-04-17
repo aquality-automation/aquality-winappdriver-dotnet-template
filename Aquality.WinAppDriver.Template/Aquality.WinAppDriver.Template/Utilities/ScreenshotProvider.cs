@@ -10,6 +10,7 @@ namespace Aquality.WinAppDriver.Template.Utilities
     {
         public string TakeScreenshot()
         {
+            AqualityServices.Logger.Info("Taking screenshot");
             var image = GetImage();
             var directory = Path.Combine(Environment.CurrentDirectory, "screenshots");
             EnsureDirectoryExists(directory);
