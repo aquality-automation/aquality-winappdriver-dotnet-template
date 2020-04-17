@@ -23,9 +23,10 @@ Template for [aquality-winappdriver-dotnet](https://github.com/aquality-automati
 [allureConfig.json](https://github.com/aquality-automation/aquality-winappdriver-dotnet/blob/master/Aquality.WinAppDriver.Template/Aquality.WinAppDriver.Template.SpecFlow/allureConfig.json) is a part of Allure Report configuration. See details [here](https://github.com/allure-framework/allure-csharp#configuration).
 
 **NOTE:**
-Do not store application executable under source control as [here]((https://github.com/aquality-automation/aquality-winappdriver-dotnet-template/tree/master/Aquality.WinAppDriver.Template/Aquality.WinAppDriver.Template/Resources/Applications)).
 
-This is done only for demo purpose. You have to implement task in your CI system that will download and install necessary version of your application under the test.
+> Do not store application executable under source control as [here](https://github.com/aquality-automation/aquality-winappdriver-dotnet-template/tree/master/Aquality.WinAppDriver.Template/Aquality.WinAppDriver.Template/Resources/Applications).
+
+> This is done only for demo purpose. You have to implement task in your CI system that will download and install necessary version of your application under the test.
 
 ### Tests execution
 Scenarios from feature files can be executed with IDE

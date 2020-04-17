@@ -15,11 +15,10 @@ namespace Aquality.WinAppDriver.Template.Forms
 
         private ILabel ResultsLabel => ElementFactory.GetLabel(By.XPath("//*[@AutomationId='48']"), "Results bar");
         
-        private readonly IButton AboutTheAuthorButton;
+        private IButton AboutTheAuthorButton => ElementFactory.GetButton(By.XPath("//*[@AutomationId='30']"), "About the Author");
 
         public CalculatorForm() : base(By.Name("Day Maxi Calc  v.1.5 Freeware"), "Calculator")
         {
-            AboutTheAuthorButton = ElementFactory.FindChildElement<IButton>(this, By.XPath("//*[@AutomationId='30']"), "About the Author");
         }
 
         public int CalculationResult => int.Parse(ResultsLabel.Text);
@@ -27,7 +26,7 @@ namespace Aquality.WinAppDriver.Template.Forms
         public void ClickAboutTheAuthorButton()
         {
             AboutTheAuthorButton.State.WaitForClickable();
-            AboutTheAuthorButton.Click();
+            AboutTheAuthorButton.MouseActions.DoubleClick();
         }
 
         public void ClickOperation(Operation operation)
