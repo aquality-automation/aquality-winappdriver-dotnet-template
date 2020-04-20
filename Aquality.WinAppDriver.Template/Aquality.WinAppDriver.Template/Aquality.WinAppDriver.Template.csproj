@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Environment\Prod\config.json" />
+    <None Remove="Resources\Environment\Stage\config.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Environment\Prod\config.json" />
+    <EmbeddedResource Include="Resources\Environment\Stage\config.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aquality.WinAppDriver" Version="0.5.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\Applications\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\Applications\Day Maxi Calc.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
