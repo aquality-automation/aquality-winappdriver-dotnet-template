@@ -15,7 +15,6 @@ namespace Aquality.WinAppDriver.Template.SpecFlow.Hooks
             }
         }
 
-
         [AfterScenario(Order = 1)]
         public void CloseApplication()
         {
