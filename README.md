@@ -6,9 +6,9 @@ Template for [aquality-winappdriver-dotnet](https://github.com/aquality-automati
 
 ### Project structure
 - **Aquality.WinAppDriver.Template** - project related part with PageObjects, models and utilities
-  - **Configuration/**: classes that used to fetch project config from [Resources/Environment](https://github.com/aquality-automation/aquality-winappdriver-dotnet/blob/master/Aquality.WinAppDriver.Template/Aquality.WinAppDriver.Template/Resources/Environment) folder
+  - **Configuration/**: classes that used to fetch project config from [Resources/Environment](https://github.com/aquality-automation/aquality-winappdriver-dotnet-template/blob/master/Aquality.WinAppDriver.Template/Aquality.WinAppDriver.Template/Resources/Environment) folder
   - **Forms/**: Page Objects
-  - **Models/**: classes that represent data models of the application under the test (POJO classes) 
+  - **Models/**: classes that represent data models of the application under the test
   - **Utilities/**: util classes
   - **Resources/**: resource files such as configurations and test data
 - **Aquality.WinAppDriver.Template.SpecFlow** - SpecFlow implementation of the tests
@@ -18,12 +18,11 @@ Template for [aquality-winappdriver-dotnet](https://github.com/aquality-automati
   - **Transformations/**: SpecFlow [data transformations](https://specflow.org/documentation/Step-Argument-Transformations/)
 
 ### Configuration
-[settings.json](https://github.com/aquality-automation/aquality-winappdriver-dotnet/blob/master/Aquality.WinAppDriver.Template/Aquality.WinAppDriver.Template/Resources/settings.json) file contains settings of Aquality WinAppDriver library. Additional information you can find [here](https://github.com/aquality-automation/aquality-winappdriver-dotnet/blob/master/README.md).
+[settings.json](https://github.com/aquality-automation/aquality-winappdriver-dotnet-template/blob/master/Aquality.WinAppDriver.Template/Aquality.WinAppDriver.Template/Resources/settings.json) file contains settings of Aquality WinAppDriver library. Additional information you can find [here](https://github.com/aquality-automation/aquality-winappdriver-dotnet-template/blob/master/README.md).
 
-[allureConfig.json](https://github.com/aquality-automation/aquality-winappdriver-dotnet/blob/master/Aquality.WinAppDriver.Template/Aquality.WinAppDriver.Template.SpecFlow/allureConfig.json) is a part of Allure Report configuration. See details [here](https://github.com/allure-framework/allure-csharp#configuration).
+[allureConfig.json](https://github.com/aquality-automation/aquality-winappdriver-dotnet-template/blob/master/Aquality.WinAppDriver.Template/Aquality.WinAppDriver.Template.SpecFlow/allureConfig.json) is a part of Allure Report configuration. See details [here](https://github.com/allure-framework/allure-csharp#configuration).
 
-**NOTE:**
-
+> **NOTE:**
 > Do not store application executable under source control as [here](https://github.com/aquality-automation/aquality-winappdriver-dotnet-template/tree/master/Aquality.WinAppDriver.Template/Aquality.WinAppDriver.Template/Resources/Applications).
 > This is done only for demo purpose. For example, you can implement task in your CI system that will download and install necessary version of your application under the test. The delivery of application builds/updates may vary.
 
@@ -38,4 +37,4 @@ Run [allure CLI](https://docs.qameta.io/allure/#_commandline) command ```allure 
 
 
 ### License
-Library's source code is made available under the [Apache 2.0 license](https://github.com/aquality-automation/aquality-winappdriver-dotnet/blob/master/LICENSE).
+Library's source code is made available under the [Apache 2.0 license](https://github.com/aquality-automation/aquality-winappdriver-dotnet-template/blob/master/LICENSE).
